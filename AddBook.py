@@ -1,7 +1,7 @@
 from tkinter import *
 from PIL import ImageTk,Image
 from tkinter import messagebox
-import pymysql
+import sqlite3
 
 def bookRegister():
     
@@ -37,10 +37,9 @@ def addBook():
     root.geometry("600x500")
 
     # Add your own database name and password here to reflect in the code
-    mypass = "12345"
-    mydatabase="db"
+    name = './data/data.db'
 
-    con = pymysql.connect(host="localhost",user="root",password=mypass,database=mydatabase)
+    con = sqlite3.connect(name)
     cur = con.cursor()
 
     # Enter Table Names here

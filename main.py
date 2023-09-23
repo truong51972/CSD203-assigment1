@@ -1,6 +1,6 @@
 from tkinter import *
 from PIL import ImageTk,Image
-import pymysql
+import sqlite3
 from tkinter import messagebox
 from AddBook import *
 from DeleteBook import *
@@ -8,10 +8,10 @@ from ViewBooks import *
 from IssueBook import *
 from ReturnBook import *
 # Add your own database name and password here to reflect in the code
-mypass = "12345"
-mydatabase="db"
 
-con = pymysql.connect(host="localhost",user="root",password=mypass,database=mydatabase)
+name = './data/data.db'
+
+con = sqlite3.connect(name)
 cur = con.cursor()
 
 root = Tk()
